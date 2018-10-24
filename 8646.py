@@ -55,7 +55,7 @@ Rings = (
     ),
 )
 
-# Go git
+# Go git2
 def RingOutput(Rings):  # Вывод информации по кольцу
     try:
         print()
