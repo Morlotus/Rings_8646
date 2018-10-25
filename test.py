@@ -47,7 +47,7 @@ a = 'Привет'
 # print(inputVsp[0][-3:len(inputVsp[0])])
 
 
-inputVsp = input().replace('0', '').split()
+inputVsp = input().replace('а', '!').split()
 print(inputVsp)
 print(inputVsp[0])
 print(inputVsp[0][-3:len(inputVsp[0])])

@@ -55,6 +55,7 @@ Rings = (
     ),
 )
 
+
 # Go git2
 def RingOutput(Rings):  # Вывод информации по кольцу
     try:
@@ -73,32 +74,17 @@ def RingOutput(Rings):  # Вывод информации по кольцу
         print('ERROR! Please indicate the ring number')
 
 
-# def WichRing(Rings):  # Вывод информации по одному ВСП
-#     while True:
-#         NumberVSP = str(input('\nTo exit - 0\nPlease enter the VSP number in the format "8646/044": '))
-#         x = 1
-#         while x < len(Rings):
-#             for i in Rings[x]:
-#                 if str(NumberVSP) == '0':
-#                     return
-#                 elif str(NumberVSP) == str(i['Number']):  # Нйденный
-#                     print('\n{0}th rings: {1}, {2}'.format(str(x), i['Number'], i['Address']))
-#                     break
-#             # else:
-#                 # print('{0}th rings: Office not found'.format(str(x)))
-#             x += 1
-
-
 def WichRing(Rings):  # Вывод информации по многим ВСП !разработка - ввод через проблем
     officeInput = []
     print("\nTo exit - 0\nFormat: '8646/04'\nPlease enter the VSP number one by one:\n ")
     while True:
-        NumberVSP = str(input("To exit - 0, Format: '8646/04', number: "))
+        NumberVSP = str(input("To exit - 0, Format: '8646/044', number: "))
         if NumberVSP != '0':
             officeInput.append(NumberVSP)
         else:
             break
-    print(officeInput)
+    print()
+    # print(officeInput)
     x = 1
     while x < len(Rings):  # x - номер кольца
         for i in Rings[x]:  # i - номер элемента в кольце
@@ -110,9 +96,11 @@ def WichRing(Rings):  # Вывод информации по многим ВСП
                     # print(len(i['Number']))
                     # print(type(len(i['Number'])))
                     # print(str(i['Number']))
-                    print(str(i['Number'])[-2:len(i['Number'])])
+                    # print(str(i['Number'])[-2:len(i['Number'])])
                     # print('\n{0}th rings: {1}, {2}'.format(str(x), i['Number'], i['Address']))
-                    print('\n%sth rings: %s, %s' % (x, i['Number'], i['Address']))
+                    print('%sth rings: %s, %s' % (x, i['Number'], i['Address']))
+                #else:
+                    # print('%s не найден' % (y)) - Выводит много раз
         x += 1
 
 
@@ -137,14 +125,14 @@ print('3: Get all information about Krasnoyarsk rings')  # AboutRings
 while True:
     try:
         print()
-        selection = int(input('4 - HELP. What do you want to do: '))
+        selection = int(input('0 - ?. What do you want to do: '))
         if selection == 1:
             RingOutput(Rings)
         elif selection == 2:
             WichRing(Rings)
         elif selection == 3:
             AboutRings(Rings)
-        elif selection == 4:
+        elif selection == 0:
             print(
                 'HELP:\n1: Get information on the ring\n2: Get information: in which ring VSP\n3: Get all information about Krasnoyarsk rings')
         else:
