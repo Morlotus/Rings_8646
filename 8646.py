@@ -56,7 +56,6 @@ Rings = (
 )
 
 
-# Go git4
 def RingOutput(Rings):  # Вывод информации по кольцу
     try:
         print()
@@ -99,8 +98,8 @@ def WichRing(Rings):  # Вывод информации по многим ВСП
                     # print(str(i['Number'])[-2:len(i['Number'])])
                     # print('\n{0}th rings: {1}, {2}'.format(str(x), i['Number'], i['Address']))
                     print('%sth rings: %s, %s' % (x, i['Number'], i['Address']))
-                #else:
-                    # print('%s не найден' % (y)) - Выводит много раз
+                # else:
+                # print('%s не найден' % (y)) - Выводит много раз
         x += 1
 
 
