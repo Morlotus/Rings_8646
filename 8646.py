@@ -66,41 +66,26 @@ def RingOutput(Rings):  # Вывод информации по кольцу
             print('Total offices:', len(Rings[NumberRings]))
             for i in Rings[NumberRings]:
                 print(i['Number'] + ', ' + i['Address'])
-                # print('Number: ' + i['Number'] + ' ' + 'Address: ' + i['Address'])
         else:
             print('ERROR! In Krasnoyarsk, only five rings, from 1 to 5')
     except ValueError:
         print('ERROR! Please indicate the ring number')
 
 
-def WichRing(Rings):  # Вывод информации по многим ВСП !разработка - ввод через проблем
-    officeInput = []
-    print("\nTo exit - 0\nFormat: '8646/04'\nPlease enter the VSP number one by one:\n ")
+def WichRing(Rings):  # Вывод информации по многим ВСП ! разработка выход по условию
     while True:
-        NumberVSP = str(input("To exit - 0, Format: '8646/044', number: "))
-        if NumberVSP != '0':
-            officeInput.append(NumberVSP)
+        print("\n0 - EXIT\nPlease enter the number of VSP separated by a space: ")
+        officeInput = input().split()
+        if officeInput.count('0'):
+            return
         else:
-            break
-    print()
-    # print(officeInput)
-    x = 1
-    while x < len(Rings):  # x - номер кольца
-        for i in Rings[x]:  # i - номер элемента в кольце
-            for y in officeInput:  # y - элемент в новом списке
-                # print('Кольцо', x)
-                # print('В кольце', Rings[x].index(i))
-                # print('В новом ', officeInput.index(y))
-                if str(y) == str((i['Number'])):
-                    # print(len(i['Number']))
-                    # print(type(len(i['Number'])))
-                    # print(str(i['Number']))
-                    # print(str(i['Number'])[-2:len(i['Number'])])
-                    # print('\n{0}th rings: {1}, {2}'.format(str(x), i['Number'], i['Address']))
-                    print('%sth rings: %s, %s' % (x, i['Number'], i['Address']))
-                # else:
-                # print('%s не найден' % (y)) - Выводит много раз
-        x += 1
+            x = 1
+            while x < len(Rings):  # x - номер кольца
+                for i in Rings[x]:  # i - номер элемента в кольце
+                    for y in officeInput:  # y - элемент в новом списке
+                        if str(y[-2:len(y)]) == str((i['Number'][-2:len(i['Number'])])):
+                            print('%sth rings: %s, %s' % (x, i['Number'], i['Address']))
+                x += 1
 
 
 def AboutRings(Rings, x=1):  # Вывод информации по всем кольцам

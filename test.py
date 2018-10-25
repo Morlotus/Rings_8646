@@ -11,6 +11,7 @@
 # a = 10
 # b = 5
 # print('У меня есть %s рублей %s копеек'%(a,b))
+# print('У меня есть {0} рублей {1} копеек'.format(a, b))
 
 
 a = 'Привет'
@@ -47,12 +48,19 @@ a = 'Привет'
 # print(inputVsp[0][-3:len(inputVsp[0])])
 
 
-inputVsp = input().replace('а', '!').split()
-print(inputVsp)
-print(inputVsp[0])
-print(inputVsp[0][-3:len(inputVsp[0])])
+# inputVsp = input().replace('а', '!').split()
+# inputVsp = input().split()
+# print(inputVsp)
+# print(inputVsp[0])
+# print(inputVsp[0][-3:len(inputVsp[0])])
 
 # inputVsp[0] = inputVsp[-3:len(inputVsp)]
 # print(inputVsp[0][-3:len(inputVsp)
 # searchVsp = inputVsp.split()[-3:len(inputVsp)]
 # print(searchVsp)
+
+
+a = input().split()
+print(a)
+if a.count(0) or a.count('0'):
+    print('Test')
